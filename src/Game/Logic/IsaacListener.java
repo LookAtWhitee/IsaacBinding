@@ -7,7 +7,7 @@ import java.awt.event.KeyListener;
 
 public class IsaacListener implements KeyListener {
     public IsaacListener(Isaac isaac){
-
+        //Work in Progress
     }
 
     @Override
