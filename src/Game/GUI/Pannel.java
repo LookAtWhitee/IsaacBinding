@@ -15,6 +15,7 @@ public class Pannel extends JPanel {
         isaac = new Isaac();
         frame.add(this);
         frame.addKeyListener(new IsaacListener(isaac));
+        frame.setVisible(true);
     }
 
     @Override
