@@ -9,6 +9,6 @@ public class Isaac {
     }
 
     public void draw(Graphics g){
-        g.drawImage(Isaac.getImage(), 70,70,500,500, null);
+        g.drawImage(Isaac.getImage(), 500,500,70,70, null);
     }
 }

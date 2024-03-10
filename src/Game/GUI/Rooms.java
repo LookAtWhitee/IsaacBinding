@@ -20,6 +20,6 @@ public class Rooms{
     }
 
     public void draw(Graphics g){
-        g.drawImage(rooms[x][y].CurrentRoom.getImage(), Game.frame.getWidth(), Game.frame.getWidth(), 0,0,null);
+        g.drawImage(rooms[x][y].CurrentRoom.getImage(), 0, 0, Game.frame.getWidth(),Game.frame.getHeight(),null);
         }
 }
