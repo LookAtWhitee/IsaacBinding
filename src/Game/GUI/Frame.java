@@ -7,8 +7,7 @@ public class Frame extends JFrame {
 
     public Frame(){
         super();
-        setSize((int)(getToolkit().getScreenSize().getWidth()*0.6),
-                (int)(getToolkit().getScreenSize().getHeight()*0.6));
+        setSize(1792, 1008);
         setTitle("Isaac Binding");
         setLocationRelativeTo(null);
         setResizable(false);

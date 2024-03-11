@@ -10,7 +10,8 @@ public class Game {
     public Game(){
         frame = new Frame();
         update = new Updater(frame);
-
+        System.out.println(frame.getWidth() + " " + frame.getHeight() );
+        //Game Loop
         final int FPS = 60;
         final int Skip_Ticks = 1000/FPS;
 
