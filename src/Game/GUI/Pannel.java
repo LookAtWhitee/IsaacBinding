@@ -13,6 +13,7 @@ public class Pannel extends JPanel {
         super();
         room = new Rooms();
         isaac = new Isaac();
+        frame.setIsaac(isaac);
         frame.add(this);
         frame.addKeyListener(new IsaacListener(isaac));
         frame.setVisible(true);
