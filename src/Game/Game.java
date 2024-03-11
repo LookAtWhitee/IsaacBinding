@@ -20,7 +20,6 @@ public class Game {
         long sleep_time = 0;
 
         while (Game_Running){
-            System.out.println("Update");
             updateGame();
             displayGame();
 

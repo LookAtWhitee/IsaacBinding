@@ -21,7 +21,9 @@ public class IsaacListener implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
+        System.out.println(e.getKeyChar());
         synchronized (key){
+
             if(!key.contains(e.getKeyChar())){
                 key.add(e.getKeyChar());
                 switch(e.getKeyChar()){
@@ -40,6 +42,7 @@ public class IsaacListener implements KeyListener {
         synchronized (key){
             if(key.contains(e.getKeyChar())){
                 key.remove(new Character(e.getKeyChar()));
+                Updater.move = 0.00;
             }
         }
         isaac.currentDirection = Direction.Still;
