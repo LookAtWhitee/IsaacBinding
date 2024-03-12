@@ -13,6 +13,7 @@ public class Isaac extends Rectangle{
     ImageIcon IsaacRight = new ImageIcon("src/Game/Sources/Isaac/IsaacRight.png");
     ImageIcon currentView = IsaacFront;
     public Direction currentDirection = Direction.Still;
+    public Direction lastDirection = Direction.Down;
     public Isaac(){
         super();
         this.x = 500;

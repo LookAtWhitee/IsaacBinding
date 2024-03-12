@@ -19,8 +19,6 @@ public class Ost {
         }
     }
 
-
-
     public Ost(){
         try {
             clip.open(audioInputStream);

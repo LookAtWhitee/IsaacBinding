@@ -10,6 +10,16 @@ import java.awt.*;
 public class Mosca extends Rectangle {
     ImageIcon mosca = new ImageIcon("src/Game/Sources/Enemy/Mosca.png");
     private Isaac isaac = Game.frame.panel.isaac;
+    private int Life = 3;
+    public boolean removeLife(){
+        Life--;
+        if (Life == 0){
+            return true;
+        }
+
+        return false;
+    }
+
     private int Movement_Speed = 2;
     public Mosca(int x, int y){
         this.x = x;

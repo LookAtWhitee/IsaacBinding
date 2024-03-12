@@ -2,6 +2,8 @@ package Game.GUI;
 
 import Game.Game;
 import Game.Logic.IsaacListener;
+import Game.Logic.Shoot;
+import Game.Logic.Updater;
 
 import javax.swing.*;
 import java.awt.*;
@@ -32,5 +34,8 @@ public class Pannel extends JPanel {
         isaac.draw(g);
         heart.draw(g);
         room.enemyList.draw(g);
+        for (Shoot shoot : Updater.shoots){
+            shoot.draw(g);
         }
+    }
 }

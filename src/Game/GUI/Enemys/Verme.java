@@ -10,6 +10,16 @@ public class Verme extends Rectangle {
     ImageIcon verme = new ImageIcon("src/Game/Sources/Enemy/Verme.png");
     private Isaac isaac = Game.frame.panel.isaac;
     private int Movement_Speed  = 2;
+    private int Life = 3;
+    public boolean removeLife(){
+        Life--;
+        if (Life == 0){
+            return true;
+        }
+
+        return false;
+    }
+
     public Verme(int x, int y){
         this.x = x;
         this.y = y;

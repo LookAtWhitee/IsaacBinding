@@ -22,14 +22,14 @@ public class IsaacListener implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         synchronized (key){
-
             if(!key.contains(e.getKeyChar())){
                 key.add(e.getKeyChar());
                 switch(e.getKeyChar()){
-                    case 'w': isaac.currentDirection = Direction.Up; break;
-                    case 's': isaac.currentDirection = Direction.Down; break;
-                    case 'a': isaac.currentDirection = Direction.Left; break;
-                    case 'd': isaac.currentDirection = Direction.Right; break;
+                    case 'w': isaac.currentDirection = Direction.Up; isaac.lastDirection = Direction.Up; break;
+                    case 's': isaac.currentDirection = Direction.Down; isaac.lastDirection = Direction.Down; break;
+                    case 'a': isaac.currentDirection = Direction.Left; isaac.lastDirection = Direction.Left; break;
+                    case 'd': isaac.currentDirection = Direction.Right; isaac.lastDirection = Direction.Right; break;
+                    case ' ': Updater.shoot(isaac); break;
                     default: isaac.currentDirection = Direction.Still; break;
                 }
             }
