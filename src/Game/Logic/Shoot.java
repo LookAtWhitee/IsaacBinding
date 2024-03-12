@@ -14,8 +14,12 @@ public class Shoot extends Rectangle {
     public Shoot(Isaac isaac) {
         this.isaac = isaac;
         direction = isaac.lastDirection;
-        x = isaac.x;
-        y = isaac.y;
+        switch (direction){
+            case Left -> { x = isaac.x - 25; y = isaac.y + 25;}
+            case Right -> { x = isaac.x + 75; y = isaac.y + 25;}
+            case Up -> { x = isaac.x + 30; y = isaac.y - 15;}
+            case Down -> { x = isaac.x + 30; y = isaac.y + 25;}
+        }
         height = 30;
         width = 30;
     }
@@ -33,7 +37,7 @@ public class Shoot extends Rectangle {
                 }
 
             case Direction.Down:
-                if (((y + ShootSpeed) <= 750)) {
+                if (((y + ShootSpeed) <= 700)) {
                     y += ShootSpeed;
                     return false;
                 } else {
