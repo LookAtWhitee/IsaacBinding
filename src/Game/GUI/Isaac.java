@@ -4,22 +4,35 @@ import Game.Logic.Direction;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
-public class Isaac {
-    ImageIcon IsaacFront = new ImageIcon("src/Game/Img/IsaacFront.png");
-    ImageIcon IsaacBack = new ImageIcon("src/Game/Img/IsaacBack.png");
-    ImageIcon IsaacLeft = new ImageIcon("src/Game/Img/IsaacLeft.png");
-    ImageIcon IsaacRight = new ImageIcon("src/Game/Img/IsaacRight.png");
+public class Isaac extends Rectangle{
+    ImageIcon IsaacFront = new ImageIcon("src/Game/Img/Isaac/IsaacFront.png");
+    ImageIcon IsaacBack = new ImageIcon("src/Game/Img/Isaac/IsaacBack.png");
+    ImageIcon IsaacLeft = new ImageIcon("src/Game/Img/Isaac/IsaacLeft.png");
+    ImageIcon IsaacRight = new ImageIcon("src/Game/Img/Isaac/IsaacRight.png");
     ImageIcon currentView = IsaacFront;
     public Direction currentDirection = Direction.Still;
-    public int x;
-    public int y;
     public Isaac(){
-        x = 500;
-        y = 500;
+        super();
+        this.x = 500;
+        this.y = 500;
+        this.width = 100;
+        this.height = 100;
     }
 
     public void draw(Graphics g){
-        g.drawImage(currentView.getImage(), x,y,100,100, null);
+        switch (currentDirection){
+            case Up -> currentView = IsaacBack;
+            case Down -> currentView = IsaacFront;
+            case Left -> currentView = IsaacLeft;
+            case Right -> currentView = IsaacRight;
+            default -> {
+                break;
+            }
+        }
+
+
+        g.drawImage(currentView.getImage(), this.x, this.y, this.width, this.height, null);
     }
 }

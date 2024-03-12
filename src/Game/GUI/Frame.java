@@ -4,6 +4,7 @@ import javax.swing.*;
 
 public class Frame extends JFrame {
     public Isaac isaac;
+    public Pannel panel;
 
     public Frame(){
         super();
@@ -13,7 +14,9 @@ public class Frame extends JFrame {
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-
+    public void setPanel(Pannel panel){
+        this.panel = panel;
+    }
     public void setIsaac(Isaac isaac){
         this.isaac = isaac;
     }

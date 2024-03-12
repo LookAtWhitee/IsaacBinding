@@ -5,21 +5,16 @@ import Game.Game;
 import java.awt.*;
 
 public class Rooms{
-    public RoomsManager[][] rooms = new RoomsManager[5][5];
-    int first_Room_x;
-    int first_Room_y;
-    int x;
-    int y;
+    public RoomsManager rooms;
+    public Enemy enemyList;
+
 
     public Rooms(){
-        first_Room_x = (int)(Math.random()*5);
-        first_Room_y = (int)(Math.random()*5);
-        rooms[first_Room_x][first_Room_y] = new RoomsManager();
-        x = first_Room_x;
-        y = first_Room_y;
+        rooms = new RoomsManager();
+        enemyList = new Enemy();
     }
 
     public void draw(Graphics g){
-        g.drawImage(rooms[x][y].CurrentRoom.getImage(), 0, 0, Game.frame.getWidth(),Game.frame.getHeight(),null);
+        g.drawImage(rooms.CurrentRoom.getImage(), 0, 0, Game.frame.getWidth(),Game.frame.getHeight(),null);
         }
 }

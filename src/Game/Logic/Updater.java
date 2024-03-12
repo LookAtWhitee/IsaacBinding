@@ -1,5 +1,6 @@
 package Game.Logic;
 
+import Game.GUI.Enemy;
 import Game.GUI.Frame;
 import Game.GUI.Isaac;
 import Game.GUI.Pannel;
@@ -12,10 +13,12 @@ public class Updater {
     public Updater(Frame frame){
         Pannel pane = new Pannel(frame);
         isaac = frame.getIsaac();
+
     }
 
     public void update(){
         movement();
+        Game.frame.panel.room.enemyList.move();
     }
 
 

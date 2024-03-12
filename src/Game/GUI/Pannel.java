@@ -12,10 +12,11 @@ public class Pannel extends JPanel {
     public Heart heart;
     public Pannel(Frame frame){
         super();
-        room = new Rooms();
         isaac = new Isaac();
-        heart = new Heart();
         frame.setIsaac(isaac);
+        frame.setPanel(this);
+        room = new Rooms();
+        heart = new Heart();
         frame.add(this);
         frame.addKeyListener(new IsaacListener(isaac));
         frame.setVisible(true);
@@ -26,5 +27,6 @@ public class Pannel extends JPanel {
         room.draw(g);
         isaac.draw(g);
         heart.draw(g);
+        room.enemyList.draw(g);
         }
 }
