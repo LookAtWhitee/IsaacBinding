@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Verme extends Rectangle {
-    ImageIcon verme = new ImageIcon("src/Game/Img/Enemy/Verme.png");
+    ImageIcon verme = new ImageIcon("src/Game/Sources/Enemy/Verme.png");
     private Isaac isaac = Game.frame.panel.isaac;
     private int Movement_Speed  = 2;
     public Verme(int x, int y){

@@ -8,7 +8,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Mosca extends Rectangle {
-    ImageIcon mosca = new ImageIcon("src/Game/Img/Enemy/Mosca.png");
+    ImageIcon mosca = new ImageIcon("src/Game/Sources/Enemy/Mosca.png");
     private Isaac isaac = Game.frame.panel.isaac;
     private int Movement_Speed = 2;
     public Mosca(int x, int y){

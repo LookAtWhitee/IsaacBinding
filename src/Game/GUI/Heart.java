@@ -6,8 +6,8 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class Heart {
-    final int heartCount = 3;
-    ImageIcon Heart = new ImageIcon("src/Game/Img/Heart.png");
+    final int heartCount = 10;
+    ImageIcon Heart = new ImageIcon("src/Game/Sources/Heart.png");
     ArrayList<ImageIcon> heart = new ArrayList<>();
     public Heart(){
         for (int i = 0; i < heartCount; i++) {

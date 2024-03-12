@@ -19,6 +19,7 @@ public class Updater {
 
     public Isaac isaac;
     public Updater(Frame frame){
+        Ost ost = new Ost();
         Pannel pane = new Pannel(frame);
         isaac = frame.getIsaac();
 

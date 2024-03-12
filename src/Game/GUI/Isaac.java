@@ -7,10 +7,10 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class Isaac extends Rectangle{
-    ImageIcon IsaacFront = new ImageIcon("src/Game/Img/Isaac/IsaacFront.png");
-    ImageIcon IsaacBack = new ImageIcon("src/Game/Img/Isaac/IsaacBack.png");
-    ImageIcon IsaacLeft = new ImageIcon("src/Game/Img/Isaac/IsaacLeft.png");
-    ImageIcon IsaacRight = new ImageIcon("src/Game/Img/Isaac/IsaacRight.png");
+    ImageIcon IsaacFront = new ImageIcon("src/Game/Sources/Isaac/IsaacFront.png");
+    ImageIcon IsaacBack = new ImageIcon("src/Game/Sources/Isaac/IsaacBack.png");
+    ImageIcon IsaacLeft = new ImageIcon("src/Game/Sources/Isaac/IsaacLeft.png");
+    ImageIcon IsaacRight = new ImageIcon("src/Game/Sources/Isaac/IsaacRight.png");
     ImageIcon currentView = IsaacFront;
     public Direction currentDirection = Direction.Still;
     public Isaac(){
