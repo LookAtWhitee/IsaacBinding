@@ -17,6 +17,9 @@ public class Frame extends JFrame {
     public void setPanel(Pannel panel){
         this.panel = panel;
     }
+    public Pannel getPanel(){
+        return panel;
+    }
     public void setIsaac(Isaac isaac){
         this.isaac = isaac;
     }

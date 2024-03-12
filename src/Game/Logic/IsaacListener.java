@@ -42,7 +42,9 @@ public class IsaacListener implements KeyListener {
             if(key.contains(e.getKeyChar())){
                 key.remove(new Character(e.getKeyChar()));
             }
+            if (key.isEmpty()){
+                isaac.currentDirection = Direction.Still;
+            }
         }
-        isaac.currentDirection = Direction.Still;
     }
 }

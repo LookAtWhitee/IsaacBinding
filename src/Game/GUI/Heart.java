@@ -6,19 +6,20 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class Heart {
+    final int heartCount = 3;
     ImageIcon Heart = new ImageIcon("src/Game/Img/Heart.png");
     ArrayList<ImageIcon> heart = new ArrayList<>();
     public Heart(){
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < heartCount; i++) {
             heart.add(Heart);
         }
     }
 
-    private void removeHeart(){
+    public void removeHeart(){
         heart.removeLast();
     }
 
-    private void addHeart(){
+    public void addHeart(){
         heart.add(Heart);
     }
     public void draw(Graphics g){

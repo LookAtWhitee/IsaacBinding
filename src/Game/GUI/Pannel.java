@@ -22,6 +22,10 @@ public class Pannel extends JPanel {
         frame.setVisible(true);
     }
 
+    public Heart getHeart(){
+        return heart;
+    }
+
     @Override
     public void paint(Graphics g){
         room.draw(g);

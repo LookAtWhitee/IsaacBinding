@@ -10,7 +10,7 @@ import java.util.Objects;
 
 public class Enemy {
     private Isaac isaac = Game.frame.getIsaac();
-    public ArrayList<Object> enemy = new ArrayList<>();
+    public static ArrayList<Object> enemy = new ArrayList<>();
     private int NumberEnemy = 2;
     public Enemy(){
         generateEnemy();
