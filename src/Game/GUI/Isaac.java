@@ -1,6 +1,7 @@
 package Game.GUI;
 
 import Game.Logic.Direction;
+import Game.Logic.State;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,6 +15,7 @@ public class Isaac extends Rectangle{
     ImageIcon currentView = IsaacFront;
     public Direction currentDirection = Direction.Still;
     public Direction lastDirection = Direction.Down;
+    public State state = State.Alive;
     public Isaac(){
         super();
         this.x = 500;

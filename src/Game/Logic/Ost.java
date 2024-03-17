@@ -26,6 +26,9 @@ public class Ost {
         } catch (Exception e) {
             System.err.println(e);
         }
+    }
 
+    public void stop(){
+        clip.stop();
     }
 }
