@@ -11,7 +11,7 @@ public class Ost {
 
     {
         try {
-            audioInputStream = AudioSystem.getAudioInputStream(new File("src/Game/Sources/The-binding-of-Isaac-OST-Basement-theme.wav"));
+            audioInputStream = AudioSystem.getAudioInputStream(new File("src/Game/Sources/Sounds/The-binding-of-Isaac-OST-Basement-theme.wav"));
             clip = AudioSystem.getClip();
 
         } catch (Exception e) {
