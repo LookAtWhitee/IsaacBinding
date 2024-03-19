@@ -6,12 +6,14 @@ import Game.GUI.Enemys.Verme;
 import Game.GUI.Frame;
 import Game.Game;
 
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Objects;
+
 
 public class Updater {
     private final int Movement_Speed = 2;
@@ -20,19 +22,27 @@ public class Updater {
 
     public Isaac isaac;
     private Ost ost;
+    public DeathScreen ds;
 
     public Updater(Frame frame) {
-
+        ds = new DeathScreen();
         ost = new Ost();
         Pannel pane = new Pannel(frame);
         isaac = frame.getIsaac();
         frame.setIconImage(new ImageIcon("src/Game/Sources/Misc/Icon.png").getImage());
     }
-
+    boolean flag = true;
     public void update() {
         if (Game.frame.getPanel().getHeart().getHeartCount() == 0) {
+            if (flag){
+                Game.frame.panel.setVisible(false);
+                flag = false;
+                ds.refreshPoints();
+                ds.setVisible(true);
+                Game.frame.add(ds);
+                Game.frame.setVisible(true);
+            }
             isaac.state = State.Dead;
-            DeathScreen ds = new DeathScreen();
             ost.stop();
         }
         if (isaac.state == State.Alive) {
@@ -46,25 +56,22 @@ public class Updater {
                             if (Enemy.enemy.get(j) instanceof Mosca) {
                                 if (shoots.get(i).intersects((Rectangle) Enemy.enemy.get(j))) {
                                     shoots.remove(i);
-                                    if (!shoots.isEmpty()){
-                                        i--;
-                                    }
                                     if (((Mosca) Enemy.enemy.get(j)).removeLife()) {
                                         Enemy.enemy.remove(j);
-                                        if (!shoots.isEmpty()){
-                                            i--;
-                                        }
+                                        ds.points += 10;
                                     }
+                                    break;
                                 }
                                 continue;
                             } else if (Enemy.enemy.get(j) instanceof Verme) {
                                 if (shoots.get(i).intersects((Rectangle) Enemy.enemy.get(j))) {
                                     shoots.remove(i);
-                                    i--;
                                     if (((Verme) Enemy.enemy.get(j)).removeLife()) {
                                         Enemy.enemy.remove(j);
+                                        ds.points += 10;
                                         j--;
                                     }
+                                    break;
                                 }
                                 continue;
                             }

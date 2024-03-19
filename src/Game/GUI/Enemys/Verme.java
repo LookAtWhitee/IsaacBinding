@@ -17,7 +17,6 @@ public class Verme extends Rectangle {
         if (Life == 0) {
             return true;
         }
-
         return false;
     }
 
