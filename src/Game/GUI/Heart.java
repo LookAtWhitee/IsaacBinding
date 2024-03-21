@@ -6,7 +6,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class Heart {
-    final int heartCount = 1;
+    final int heartCount = 3;
     ImageIcon Heart = new ImageIcon("src/Game/Sources/Heart.png");
     ArrayList<ImageIcon> heart = new ArrayList<>();
     public Heart(){

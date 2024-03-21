@@ -35,7 +35,7 @@ public class Mosca extends Rectangle {
 
     public void move() {
         if (x > isaac.x) {
-            if (isaac.x % x == 0 ) {
+            if (isaac.x % (x+1) == 0 ) {
                 if (!this.intersects(isaac)){
                     x -= Movement_Speed;
                 }
@@ -45,7 +45,7 @@ public class Mosca extends Rectangle {
                 }
             }
         } else if (x < isaac.x) {
-            if (isaac.x % x == 0) {
+            if (isaac.x % (x+1) == 0) {
                 if (!this.intersects(isaac)){
                     x += Movement_Speed;
                 }
@@ -55,7 +55,7 @@ public class Mosca extends Rectangle {
                 }
             }
         } else if (y > isaac.y) {
-            if (isaac.y % y == 0) {
+            if (isaac.y % (y+1) == 0) {
                 if (!this.intersects(isaac)){
                     y -= Movement_Speed;
                 }
@@ -65,7 +65,7 @@ public class Mosca extends Rectangle {
                 }
             }
         } else if (y < isaac.y) {
-            if (isaac.y % y == 0) {
+            if (isaac.y % (y+1) == 0) {
                 if (!this.intersects(isaac)){
                     y += Movement_Speed;
                 }

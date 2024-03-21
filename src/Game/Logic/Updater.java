@@ -16,7 +16,7 @@ import java.util.Objects;
 
 
 public class Updater {
-    private final int Movement_Speed = 2;
+    private final int Movement_Speed = 5;
     private final long invulnerability = 5000;
     public static ArrayList<Shoot> shoots = new ArrayList<>();
 
@@ -58,6 +58,7 @@ public class Updater {
                                     shoots.remove(i);
                                     if (((Mosca) Enemy.enemy.get(j)).removeLife()) {
                                         Enemy.enemy.remove(j);
+                                        Enemy.updateTimer();
                                         ds.points += 10;
                                     }
                                     break;
@@ -68,6 +69,7 @@ public class Updater {
                                     shoots.remove(i);
                                     if (((Verme) Enemy.enemy.get(j)).removeLife()) {
                                         Enemy.enemy.remove(j);
+                                        Enemy.updateTimer();
                                         ds.points += 10;
                                         j--;
                                     }
@@ -130,11 +132,13 @@ public class Updater {
                                 if (enemy instanceof Mosca) {
                                     if (!isaac.intersects((Mosca) enemy)) {
                                         isaac.y -= Movement_Speed;
+                                        break;
                                     }
                                 }
                                 if (enemy instanceof Verme) {
                                     if (!isaac.intersects((Verme) enemy)) {
                                         isaac.y -= Movement_Speed;
+                                        break;
                                     }
                                 }
                             }
@@ -150,11 +154,13 @@ public class Updater {
                                 if (enemy instanceof Mosca) {
                                     if (!isaac.intersects((Mosca) enemy)) {
                                         isaac.y += Movement_Speed;
+                                        break;
                                     }
                                 }
                                 if (enemy instanceof Verme) {
                                     if (!isaac.intersects((Verme) enemy)) {
                                         isaac.y += Movement_Speed;
+                                        break;
                                     }
                                 }
                             }
@@ -170,11 +176,13 @@ public class Updater {
                                 if (enemy instanceof Mosca) {
                                     if (!isaac.intersects((Mosca) enemy)) {
                                         isaac.x -= Movement_Speed;
+                                        break;
                                     }
                                 }
                                 if (enemy instanceof Verme) {
                                     if (!isaac.intersects((Verme) enemy)) {
                                         isaac.x -= Movement_Speed;
+                                        break;
                                     }
                                 }
                             }
@@ -190,11 +198,13 @@ public class Updater {
                                 if (enemy instanceof Mosca) {
                                     if (!isaac.intersects((Mosca) enemy)) {
                                         isaac.x += Movement_Speed;
+                                        break;
                                     }
                                 }
                                 if (enemy instanceof Verme) {
                                     if (!isaac.intersects((Verme) enemy)) {
                                         isaac.x += Movement_Speed;
+                                        break;
                                     }
                                 }
                             }
