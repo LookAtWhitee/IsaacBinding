@@ -9,7 +9,7 @@ import java.awt.*;
 public class Verme extends Rectangle {
     ImageIcon verme = new ImageIcon("src/Game/Sources/Enemy/Verme.png");
     private Isaac isaac = Game.frame.panel.isaac;
-    private int Movement_Speed = 13;
+    private int Movement_Speed = 4;
     private int Life = 3;
 
     public boolean removeLife() {
@@ -32,43 +32,91 @@ public class Verme extends Rectangle {
     }
 
     public void move() {
-        if (x > isaac.x) {
-            if (isaac.x % (x+1) == 0 ) {
-                if (!this.intersects(isaac)){
+        if (x > isaac.x && y > isaac.y) {
+            if (isaac.x % (x + 1) == 0) {
+                if (!this.intersects(isaac)) {
+                    x -= Movement_Speed;
+                    y -= Movement_Speed;
+                }
+            } else {
+                if (!this.intersects(isaac)) {
+                    x -= 1;
+                    y -= 1;
+                }
+            }
+        }else if (x < isaac.x && y > isaac.y){
+            if (isaac.x % (x + 1) == 0) {
+                if (!this.intersects(isaac)) {
+                    x += Movement_Speed;
+                    y -= Movement_Speed;
+                }
+            } else {
+                if (!this.intersects(isaac)) {
+                    x += 1;
+                    y -= 1;
+                }
+            }
+        }else if(x > isaac.x && y < isaac.y){
+            if (isaac.x % (x + 1) == 0) {
+                if (!this.intersects(isaac)) {
+                    x -= Movement_Speed;
+                    y += Movement_Speed;
+                }
+            } else {
+                if (!this.intersects(isaac)) {
+                    x -= 1;
+                    y += 1;
+                }
+            }
+        } else if(x < isaac.x && y < isaac.y){
+            if (isaac.x % (x + 1) == 0) {
+                if (!this.intersects(isaac)) {
+                    x += Movement_Speed;
+                    y += Movement_Speed;
+                }
+            } else {
+                if (!this.intersects(isaac)) {
+                    x += 1;
+                    y += 1;
+                }
+            }
+        }else if (x > isaac.x) {
+            if (isaac.x % (x + 1) == 0) {
+                if (!this.intersects(isaac)) {
                     x -= Movement_Speed;
                 }
             } else {
-                if (!this.intersects(isaac)){
+                if (!this.intersects(isaac)) {
                     x -= 1;
                 }
             }
         } else if (x < isaac.x) {
-            if (isaac.x % (x+1) == 0) {
-                if (!this.intersects(isaac)){
+            if (isaac.x % (x + 1) == 0) {
+                if (!this.intersects(isaac)) {
                     x += Movement_Speed;
                 }
             } else {
-                if (!this.intersects(isaac)){
+                if (!this.intersects(isaac)) {
                     x += 1;
                 }
             }
         } else if (y > isaac.y) {
-            if (isaac.y % (y+1) == 0) {
-                if (!this.intersects(isaac)){
+            if (isaac.y % (y + 1) == 0) {
+                if (!this.intersects(isaac)) {
                     y -= Movement_Speed;
                 }
             } else {
-                if (!this.intersects(isaac)){
+                if (!this.intersects(isaac)) {
                     y -= 1;
                 }
             }
         } else if (y < isaac.y) {
-            if (isaac.y % (y+1) == 0) {
-                if (!this.intersects(isaac)){
+            if (isaac.y % (y + 1) == 0) {
+                if (!this.intersects(isaac)) {
                     y += Movement_Speed;
                 }
             } else {
-                if (!this.intersects(isaac)){
+                if (!this.intersects(isaac)) {
                     y += 1;
                 }
             }
