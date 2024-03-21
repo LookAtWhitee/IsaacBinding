@@ -48,10 +48,9 @@ public class Enemy {
     }
 
     public static void updateTimer(){
-        tempo -= 5;
+        tempo -= 15;
         t.setDelay(tempo);
-        t.stop();
-        t.start();
+        System.out.println(t.getDelay());
     }
 
     public void move() {

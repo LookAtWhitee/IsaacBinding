@@ -37,7 +37,7 @@ public class Shoot extends Rectangle {
                 }
 
             case Direction.Down:
-                if (((y + ShootSpeed) <= 700)) {
+                if (((y + ShootSpeed) <= 850)) {
                     y += ShootSpeed;
                     return false;
                 } else {

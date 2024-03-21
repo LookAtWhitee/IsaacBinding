@@ -32,6 +32,7 @@ public class Updater {
         frame.setIconImage(new ImageIcon("src/Game/Sources/Misc/Icon.png").getImage());
     }
     boolean flag = true;
+    ShootHitSoundEffect sHSE;
     public void update() {
         if (Game.frame.getPanel().getHeart().getHeartCount() == 0) {
             if (flag){
@@ -56,6 +57,7 @@ public class Updater {
                             if (Enemy.enemy.get(j) instanceof Mosca) {
                                 if (shoots.get(i).intersects((Rectangle) Enemy.enemy.get(j))) {
                                     shoots.remove(i);
+                                    sHSE = new ShootHitSoundEffect();
                                     if (((Mosca) Enemy.enemy.get(j)).removeLife()) {
                                         Enemy.enemy.remove(j);
                                         Enemy.updateTimer();
@@ -67,6 +69,7 @@ public class Updater {
                             } else if (Enemy.enemy.get(j) instanceof Verme) {
                                 if (shoots.get(i).intersects((Rectangle) Enemy.enemy.get(j))) {
                                     shoots.remove(i);
+                                     sHSE = new ShootHitSoundEffect();
                                     if (((Verme) Enemy.enemy.get(j)).removeLife()) {
                                         Enemy.enemy.remove(j);
                                         Enemy.updateTimer();
@@ -89,6 +92,7 @@ public class Updater {
     public static void shoot(Isaac isaac) {
         if (isaac.state == State.Alive) {
             shoots.add(new Shoot(isaac));
+            ShootSoundEffect sSF = new ShootSoundEffect();
         }
     }
 
